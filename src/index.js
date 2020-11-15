@@ -9,6 +9,7 @@ import 'react-dates/lib/css/_datepicker.css'
 import { startSetExpenses } from './actions/expenses'
 import { firebase } from './firebase/firebase'
 import { login, logout } from './actions/auth'
+import LoadingPage from './components/LoadingPage'
 
 
 const store = configureStore();
@@ -21,11 +22,7 @@ const jsx = (
 
 console.log('Test')
 
-ReactDOM.render(<p>Loading ....</p>, document.getElementById('app'))
-
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(jsx, document.getElementById('app'))
-})
+ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 let hasRendered = false
 
